@@ -11,8 +11,8 @@ const configration = new Configuration({
 const openai = new OpenAIApi(configration);
 
 const app = express();
-app.use(express.static('public'))
 app.use(cors());
+app.use(express.static('public'))
 app.use(express.json());
 
 app.post("/", async (req, res) => {
@@ -28,7 +28,10 @@ app.post("/", async (req, res) => {
       frequency_penalty: 0.5, 
       presence_penalty: 0,
     });
-
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,Content-Type,Authorization');
+    res.setHeader('Access-Control-Allow-Credentials', true);
     res.status(200).send({
       bot: response.data.choices[0].text,
     });
