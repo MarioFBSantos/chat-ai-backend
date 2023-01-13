@@ -2,10 +2,10 @@
   "name": "chat-ai-backend",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "api/index.js",
   "type": "module",
   "scripts": {
-    "start": "nodemon server"
+    "start": "nodemon index"
   },
   "author": "Mario Santos",
   "license": "ISC",
