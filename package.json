@@ -5,7 +5,7 @@
   "main": "api/index.js",
   "type": "module",
   "scripts": {
-    "start": "nodemon index"
+    "start": "nodemon api/index"
   },
   "author": "Mario Santos",
   "license": "ISC",
